@@ -7,6 +7,7 @@ public class UsingDirectives
     public void Example()
     {
         var entry = new Entry();
+        Console.WriteLine(entry);
     }
     // Alias
     // Removing global using

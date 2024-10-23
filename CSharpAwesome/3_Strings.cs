@@ -12,9 +12,11 @@ public class Strings
         var fileString = "C:\\Users\\kdollard\\Documents\\";
         var newLineInString = "First line\nSecondLine"; // not precisely correct on Windows
 
-        Console.WriteLine($"Quoted string: {quotedString}");
-        Console.WriteLine($"File string: {fileString}");
-        Console.WriteLine($"File string: {newLineInString}");
+        Header( "Quoted string examples");
+        Print("Quoted string", quotedString);
+        Print("File string", fileString);
+        Print("New line in string", newLineInString);
+        Console.WriteLine();
     }
 
     /// <summary>
@@ -25,32 +27,13 @@ public class Strings
         var quotedString = @"The street is named ""Green street""";
         var fileString = @"C:\Users\kdollard\Documents\";
         var newLineInString = @"First line
-SecondLine"; 
+SecondLine";
 
-        Console.WriteLine($"Quoted string: {quotedString}");
-        Console.WriteLine($"File string: {fileString}");
-        Console.WriteLine($"File string: {newLineInString}");
-    }
-
-    /// <summary>
-    /// Interpolated strings solve a different problem - how to include data in a string easily. 
-    /// String.Format is more prone to runtime failures and generally slower.
-    /// </summary>
-    /// <remarks>
-    /// Note that interpolated strings can be either quoted strings or verbatim strings.
-    /// </remarks>
-    public static void InterpolatedStringExample()
-    {
-        var planet = "Earth";
-        var street = "Green street";
-        var user = "kdollard";
-
-        var greeting = $"Hello {planet}";
-        var quotedString = @"The street is named ""{street}""";
-        var fileString = @$"C:\Users\{user}\Documents\";
-
-        Console.WriteLine($"Quoted string: {quotedString}");
-        Console.WriteLine($"File string: {fileString}");
+        Header( "Verbatim string examples");
+        Print("Quoted string", quotedString);
+        Print("File string", fileString);
+        Print("New line in string", newLineInString);
+        Console.WriteLine();
     }
 
     /// <summary>
@@ -75,6 +58,33 @@ SecondLine";
             }
             """;
 
+        Header( "Raw string example");
+        Print("JSON string", jsonString);
+        Console.WriteLine();
+    }
+
+    /// <summary>
+    /// Interpolated strings solve a different problem - how to include data in a string easily. 
+    /// String.Format is more prone to runtime failures and generally slower.
+    /// </summary>
+    /// <remarks>
+    /// Note that interpolated strings can be either quoted strings or verbatim strings.
+    /// </remarks>
+    public static void InterpolatedStringExample()
+    {
+        var planet = "Earth";
+        var street = "Green street";
+        var user = "kdollard";
+
+        var greeting = $"Hello {planet}";
+        var quotedString = @$"The street is named ""{street}""";
+        var fileString = @$"C:\Users\{user}\Documents\";
+
+        Header( "Interpolated string examples");
+        Print("Greeting", greeting);
+        Print("Quoted string", quotedString);
+        Print("File string", fileString);
+
         // Did you know you could do this trick with tuples?
         var (date, avgTemp) = (DateTime.Parse("2025-01-01T00:00:00-07:00"), 25);
         string interpolatedJsonString = $$"""
@@ -88,6 +98,16 @@ SecondLine";
               ]
             }
             """;
+
+        Console.WriteLine($"Quoted string: {quotedString}");
+        Console.WriteLine($"File string: {fileString}");
+        Console.WriteLine();
     }
+
+    private static void Print(string desc, string value)
+        => Console.WriteLine($"{desc}: {value}");
+    private static void Header(string desc)
+        => Console.WriteLine($"------- {desc}");
+
 }
 
