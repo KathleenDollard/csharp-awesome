@@ -8,7 +8,7 @@ Both of these repos are setup with before and after versions that are stored in 
 
 I will update main to the initial starting point for the most recent conference. I'll include the finished code from the conference, sometimes with additional changes that I didn't get to in the talk. I anticipate that this will soon have more examples than I give in any single talk. 
 
-My passion for this is seeing C# become more expressive every year and wanting you and your team to benefit at the pace that makes sense. That pace is very team specific and I want to make it easy for you and your team to uptake new features in the fastest manner that makes sense for your team.
+My passion for this is seeing C# become more expressive every year and wanting you and your team to benefit at the pace that makes sense. That pace is very team specific and I want to make it easy for you and your team to uptake new features in the fastest manner your team can accomodate.
 
 Thanks so much for your interest! 
 
