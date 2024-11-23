@@ -7,6 +7,6 @@ Strings.VerbatimStringExample();
 Strings.RawStringExample();
 Strings.InterpolatedStringExample();
 
-Records.Example();
+WorkingWithRecords.Example();
 
 CollectionExpressions.SpreadExamples();
