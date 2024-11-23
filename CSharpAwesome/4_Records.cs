@@ -7,7 +7,7 @@ public record class Customer(string FirstName,
 {
 }
 
-public class Records
+public class WorkingWithRecords
 {
     public static void Example()
     {
