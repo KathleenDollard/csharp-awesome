@@ -1,7 +1,15 @@
-﻿namespace CSharpAwesome.Init;
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace CSharpAwesome.Init;
 
 public class Customer
 {
+    
+    public Customer()
+    {
+    }
+
+    [SetsRequiredMembers]
     public Customer(string firstName, string lastName, string? middleName = null)
     {
         FirstName = firstName;
@@ -9,9 +17,9 @@ public class Customer
         MiddleName = middleName;
     }
 
-    public string FirstName { get; }
-    public string LastName { get; }
-    public string? MiddleName { get; }
+    public required string FirstName { get; init; }
+    public required string LastName { get; init; }
+    public string? MiddleName { get; init; }
 }
 
 public class InitAndRequiredExample
@@ -23,10 +31,10 @@ public class InitAndRequiredExample
 
     public void ExampleOfInit()
     {
-        //Customer person = new()
-        //{
-        //    FirstName = "John",
-        //    LastName = "Doe"
-        //};
+        Customer person = new()
+        {
+            FirstName = "John",
+            LastName = "Doe"
+        };
     }
 }
