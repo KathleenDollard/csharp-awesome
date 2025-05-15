@@ -4,7 +4,7 @@ namespace CSharpAwesome;
 
 
 
-public class CliOption<T>
+public class CliOption<T> where T: CliOption<T>
 {}
 
 public static class Extensions
